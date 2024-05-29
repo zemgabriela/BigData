@@ -65,7 +65,7 @@ def data_cleaning():
     
     # ===== REMOVE DUPLICATES VALUES ====
     df = df.drop_duplicates().reset_index(drop = True)
-    
+    df['ID'] = range(1,len(df)+1)
     # Save it
     df.to_csv(os.path.join(data_path, 'df_clean.csv'), index = False)
 
